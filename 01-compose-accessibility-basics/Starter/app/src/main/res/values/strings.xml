@@ -11,6 +11,7 @@
     <string name="top_bar_info_button_description">More information</string>
     <string name="home_item_click_label">View details for %s</string>
     <string name="detail_favorite_label">Favorite</string>
+    <string name="detail_not_favorite_label">Not favorite</string>
     <string name="screen_title_home">Home</string>
     <string name="screen_title_detail">Details</string>
     <string name="nap_content_description">Nap from %1$s to %2$s</string>
