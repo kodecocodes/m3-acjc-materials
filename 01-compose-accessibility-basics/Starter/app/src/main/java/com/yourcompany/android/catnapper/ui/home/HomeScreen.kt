@@ -52,7 +52,7 @@ fun HomeScreen(
 
   LazyColumn(contentPadding = contentPadding) {
     items(cats) { cat ->
-      HomeItem(
+      CatRow(
         cat = cat,
         onItemClicked = { navController.navigate(Screen.Detail.createRoute(cat.id)) },
         onFavoriteClicked = { homeViewModel.toggleFavoriteStatus(cat.id) }
@@ -62,7 +62,7 @@ fun HomeScreen(
 }
 
 @Composable
-fun HomeItem(
+fun CatRow(
   cat: Cat,
   onItemClicked: (Cat) -> Unit,
   onFavoriteClicked: () -> Unit
