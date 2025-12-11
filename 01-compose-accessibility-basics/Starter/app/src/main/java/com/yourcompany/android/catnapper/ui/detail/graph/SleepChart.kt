@@ -1,5 +1,5 @@
 /*
- * Copyright (c) $today.year Kodeco Inc
+ * Copyright (c) 2025 Kodeco Inc
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@
  */
 
 
-package com.yourcompany.android.catnapper.ui.detail
+package com.yourcompany.android.catnapper.ui.detail.graph
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize

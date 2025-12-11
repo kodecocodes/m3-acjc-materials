@@ -1,5 +1,5 @@
 /*
- * Copyright (c) $today.year Kodeco Inc
+ * Copyright (c) 2025 Kodeco Inc
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -55,13 +55,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.yourcompany.android.catnapper.R
 import com.yourcompany.android.catnapper.data.Cat
 import com.yourcompany.android.catnapper.ui.navigation.Screen
 import com.yourcompany.android.catnapper.ui.theme.CatNapperTheme
@@ -94,12 +92,6 @@ fun CatRow(
   onItemClicked: (Cat) -> Unit,
   onFavoriteClicked: () -> Unit
 ) {
-  val favoriteActionLabel = if (cat.isFavorite) {
-    stringResource(id = R.string.action_label_unfavorite)
-  } else {
-    stringResource(id = R.string.action_label_favorite)
-  }
-
   Card(
     modifier = Modifier
       .padding(ItemPadding)

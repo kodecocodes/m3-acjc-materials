@@ -1,22 +1,43 @@
-<resources>
-    <string name="app_name">Cat Napper</string>
+<!--
+Copyright (c) 2024 Kodeco Inc.
 
-    <string name="details_name">Name: %s</string>
-    <string name="details_age">Age: %d</string>
-    <string name="details_notes">Notes: %s</string>
-    <string name="details_naps">Naps:</string>
-    <string name="graph_title_box_layout">Daily Sleep Schedule (Box Layout):</string>
-    <string name="graph_title_canvas">Daily Sleep Schedule (Canvas):</string>
-    <string name="cat_image_description">A picture of %s.</string>
-    <string name="top_bar_info_button_description">More information</string>
-    <string name="home_item_click_label">View details for %s</string>
-    <string name="detail_favorite_label">Favorite</string>
-    <string name="detail_not_favorite_label">Not favorite</string>
-    <string name="screen_title_home">Home</string>
-    <string name="screen_title_detail">Details</string>
-    <string name="nap_content_description">Nap from %1$s to %2$s</string>
-    <string name="state_description_favorited">Favorited</string>
-    <string name="state_description_not_favorited">Not favorited</string>
-    <string name="action_label_favorite">Favorite</string>
-    <string name="action_label_unfavorite">Unfavorite</string>
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+distribute, sublicense, create a derivative work, and/or sell copies of the
+Software in any work that is designed, intended, or marketed for pedagogical or
+instructional purposes related to programming, coding, application development,
+or information technology.  Permission for such use, copying, modification,
+merger, publication, distribution, sublicensing, creation of derivative works,
+or sale is expressly withheld.
+
+This project and source code may use libraries or frameworks that are
+released under various Open-Source licenses. Use of those libraries and
+frameworks are governed by their own individual licenses.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+-->
+
+<resources>
+  <string name="app_name">Cat Napper</string>
+
+  <string name="details_age">Age: %d</string>
+  <string name="details_naps">Naps:</string>
+  <string name="detail_favorite_label">Favorite</string>
+  <string name="action_label_favorite">Favorite</string>
+  <string name="action_label_unfavorite">Unfavorite</string>
 </resources>
