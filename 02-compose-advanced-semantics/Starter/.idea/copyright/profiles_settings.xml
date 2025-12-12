@@ -1,3 +1,7 @@
 <component name="CopyrightManager">
-  <settings default="Kodeco" />
+  <settings default="Kodeco">
+    <module2copyright>
+      <element module="All" copyright="Kodeco" />
+    </module2copyright>
+  </settings>
 </component>
