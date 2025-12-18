@@ -94,7 +94,7 @@ fun CatRow(
   onItemClicked: (Cat) -> Unit,
   onFavoriteClicked: () -> Unit
 ) {
-  val clickLabel = stringResource(id = R.string.cat_item_click_label, cat.name)
+  val clickLabel = stringResource(id = R.string.home_item_click_label, cat.name)
 
   Card(
     modifier = Modifier

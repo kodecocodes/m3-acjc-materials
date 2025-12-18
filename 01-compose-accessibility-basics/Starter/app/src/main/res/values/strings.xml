@@ -35,10 +35,21 @@ THE SOFTWARE.
 <resources>
   <string name="app_name">Cat Napper</string>
 
-  <string name="details_age">Age: %d</string>
-  <string name="details_naps">Naps:</string>
-  <string name="detail_favorite_label">Favorite</string>
   <string name="action_label_favorite">Favorite</string>
   <string name="action_label_unfavorite">Unfavorite</string>
   <string name="cat_image_description">A picture of %s.</string>
+  <string name="details_name">Name: %s</string>
+  <string name="details_age">Age: %d</string>
+  <string name="details_notes">Notes: %s</string>
+  <string name="details_naps">Naps:</string>
+  <string name="detail_favorite_label">Favorite</string>
+  <string name="graph_title_box_layout">Daily Sleep Schedule (Box Layout):</string>
+  <string name="graph_title_canvas">Daily Sleep Schedule (Canvas):</string>
+  <string name="home_item_click_label">View details for %s</string>
+  <string name="nap_content_description">Nap from %1$s to %2$s</string>
+  <string name="top_bar_info_button_description">More information</string>
+  <string name="screen_title_home">Home</string>
+  <string name="screen_title_detail">Details</string>
+  <string name="state_description_favorited">Favorited</string>
+  <string name="state_description_not_favorited">Not favorited</string>
 </resources>
