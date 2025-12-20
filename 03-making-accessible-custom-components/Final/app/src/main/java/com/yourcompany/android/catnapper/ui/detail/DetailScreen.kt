@@ -1,6 +1,33 @@
 /*
- * Copyright (c) 2024 Your Company. All rights reserved.
+ * Copyright (c) 2025 Kodeco Inc
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+ * distribute, sublicense, create a derivative work, and/or sell copies of the
+ * Software in any work that is designed, intended, or marketed for pedagogical or
+ * instructional purposes related to programming, coding, application development,
+ * or information technology.  Permission for such use, copying, modification,
+ * merger, publication, distribution, sublicensing, creation of derivative works,
+ * or sale is expressly withheld.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
  */
+
 
 package com.yourcompany.android.catnapper.ui.detail
 
@@ -85,7 +112,8 @@ fun DetailScreen(
         ) {
           Text(
             text = cat.name,
-            style = MaterialTheme.typography.h5
+            style = MaterialTheme.typography.h5,
+            modifier = Modifier.semantics { heading() },
           )
           Spacer(modifier = Modifier.weight(1f))
           IconToggleButton(
@@ -98,48 +126,50 @@ fun DetailScreen(
             )
           }
         }
+        Column(Modifier.semantics(mergeDescendants = true) {}) {
+          Text(
+            text = stringResource(id = R.string.details_age, cat.age),
+            style = MaterialTheme.typography.subtitle1,
+            modifier = Modifier.padding(top = 4.dp)
+          )
+          Text(
+            text = cat.notes,
+            style = MaterialTheme.typography.body1,
+            modifier = Modifier.padding(top = 8.dp)
+          )
+        }
+        Text(
+          text = stringResource(id = R.string.graph_title_box_layout),
+          style = MaterialTheme.typography.h6,
+          modifier = Modifier
+            .padding(bottom = 8.dp)
+            .semantics { heading() }
+        )
+        SleepBarGraph(
+          naps = cat.naps, modifier = Modifier
+            .fillMaxWidth()
+            .height(32.dp)
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-          text = stringResource(id = R.string.details_age, cat.age),
-          style = MaterialTheme.typography.subtitle1,
-          modifier = Modifier.padding(top = 4.dp)
+          text = stringResource(id = R.string.graph_title_canvas),
+          style = MaterialTheme.typography.h6,
+          modifier = Modifier
+            .padding(bottom = 8.dp)
+            .semantics { heading() }
         )
-        Text(
-          text = cat.notes,
-          style = MaterialTheme.typography.body1,
-          modifier = Modifier.padding(top = 8.dp)
+        SleepChart(
+          naps = cat.naps,
+          modifier = Modifier
+            .fillMaxWidth()
+            .height(32.dp)
+            .background(MaterialTheme.colors.onPrimary)
         )
 
         if (cat.naps.isNotEmpty()) {
           Divider(modifier = Modifier.padding(vertical = 16.dp))
-
-          Text(
-            text = stringResource(id = R.string.graph_title_box_layout),
-            style = MaterialTheme.typography.h6,
-            modifier = Modifier
-              .padding(bottom = 8.dp)
-              .semantics { heading() }
-          )
-          SleepBarGraph(naps = cat.naps, modifier = Modifier
-            .fillMaxWidth()
-            .height(32.dp))
-
-          Spacer(modifier = Modifier.height(16.dp))
-
-          Text(
-            text = stringResource(id = R.string.graph_title_canvas),
-            style = MaterialTheme.typography.h6,
-            modifier = Modifier
-              .padding(bottom = 8.dp)
-              .semantics { heading() }
-          )
-          SleepChart(
-            naps = cat.naps,
-            modifier = Modifier
-              .fillMaxWidth()
-              .height(32.dp)
-              .background(MaterialTheme.colors.onPrimary)
-          )
 
           Spacer(modifier = Modifier.height(16.dp))
 
@@ -156,7 +186,12 @@ fun DetailScreen(
               Text(
                 text = "${nap.start.format(formatter)} - ${nap.end.format(formatter)}",
                 modifier = Modifier.semantics {
-                  collectionItemInfo = CollectionItemInfo(index, 1, 0, 1)
+                  collectionItemInfo = CollectionItemInfo(
+                    rowIndex = index,
+                    rowSpan = 1,
+                    columnIndex = 0,
+                    columnSpan = 1
+                  )
                 }
               )
             }

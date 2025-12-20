@@ -5,12 +5,15 @@
 package com.yourcompany.android.catnapper
 
 import androidx.compose.ui.test.assertIsDisplayed
-import androidx.compose.ui.test.hasParent
+import androidx.compose.ui.test.assertIsToggleable
+import androidx.compose.ui.test.hasContentDescription
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.isHeading
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.printToLog
 import com.yourcompany.android.catnapper.ui.theme.CatNapperTheme
 import org.junit.Rule
 import org.junit.Test
@@ -21,21 +24,25 @@ class SemanticsTest {
   val composeTestRule = createComposeRule()
 
   @Test
-  fun detailScreen_verifyHeadingsAndState() {
+  fun detailScreen_verifyToggleAndHeading() {
     composeTestRule.setContent {
-      CatNapperTheme {
-        CatNapperApp()
-      }
+      CatNapperTheme { CatNapperApp() }
     }
 
-    // Navigate to the detail screen for the first cat
-    composeTestRule.onNodeWithText("Luna").performClick()
+    // 1. Navigate to the detail screen for the first cat
+    composeTestRule.onNodeWithText("Luna")
+      .performClick()
 
-    // Verify that the "Daily Sleep Schedule (Box Layout)" heading is displayed
-    composeTestRule.onNode(isHeading() and hasText("Daily Sleep Schedule (Box Layout)"))
+    // 2. Verify that the "Favorite" icon is toggleable
+    composeTestRule
+      .onNode(hasContentDescription("Favorite", substring = true, ignoreCase = true))
+      .assertIsToggleable()
+
+    // 3. Verify that the "Naps:" heading is displayed
+    composeTestRule.onNode(isHeading() and hasText("Naps:"))
       .assertIsDisplayed()
 
-    // Verify that the "Favorite" button has the correct state description
-    composeTestRule.onNode(hasParent(hasText("Favorite"))).assertIsDisplayed()
+    composeTestRule.onRoot()
+      .printToLog("TESTING123")
   }
 }
