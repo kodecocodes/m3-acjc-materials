@@ -95,11 +95,6 @@ fun CatRow(
   onFavoriteClicked: () -> Unit
 ) {
   val clickLabel = stringResource(id = R.string.home_item_click_label, cat.name)
-  val favoriteActionLabel = if (cat.isFavorite) {
-    stringResource(id = R.string.action_label_unfavorite)
-  } else {
-    stringResource(id = R.string.action_label_favorite)
-  }
 
   Card(
     modifier = Modifier
