@@ -36,6 +36,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.res.stringResource
@@ -68,7 +69,7 @@ fun SleepBarGraph(naps: List<Nap>, modifier: Modifier = Modifier) {
           })
       }
     },
-    modifier = modifier.background(Color.LightGray)
+    modifier = modifier.background(Color.LightGray).clipToBounds()
   ) { measurables, constraints ->
     val totalMinutes = 24 * 60
     val placeables = measurables.mapIndexed { index, measurable ->
